@@ -15,8 +15,7 @@ from Heuristics.utils.utils import compute_distance_matrix
 def Multi_Start_LS(graph: Graph, num_regions: int,
                    n_iter: int = 100,
                    dist_matrix: None | NDArray = None,
-                   max_time: float = np.inf,
-                   seed: None | int = None) -> dict:
+                   max_time: float = np.inf) -> dict:
     """
     Multi Start Local Search
 
@@ -26,7 +25,6 @@ def Multi_Start_LS(graph: Graph, num_regions: int,
         n_iter (int, optional): Number of local seach iterations. Defaults to 100.
         dist_matrix (None | NDArray, optional): Distance Matrix, if available. Defaults to None.
         max_time (float, optional): Maximum execution time. Defaults to np.inf.
-        seed (None | int, optional): Random seed. Defaults to None.
 
     Returns:
         dict: Dictionary with keys:
@@ -37,11 +35,6 @@ def Multi_Start_LS(graph: Graph, num_regions: int,
         "Time: LS"
         "record_f"
     """
-
-    # set random seed
-    if seed is not None:
-        np.random.seed(seed)
-        random.seed(seed)
         
     # count execution time, and for diferent concepts
     start_time_general = time.time()
@@ -109,8 +102,7 @@ def GRASP(graph: Graph, num_regions: int,
           n_iter: int = 100,
           alpha: int | float | list | tuple = 0.1,
           dist_matrix: None | NDArray = None,
-          max_time: float = np.inf,
-          seed: None | int = None) -> dict:
+          max_time: float = np.inf) -> dict:
     """
     GRASP 
 
@@ -123,7 +115,6 @@ def GRASP(graph: Graph, num_regions: int,
         n_iter (int, optional): Number of local seach iterations. Defaults to 100.
         dist_matrix (None | NDArray, optional): Distance Matrix. Defaults to None.
         max_time (float, optional): Maximum execution time. Defaults to np.inf.
-        seed (None | int, optional): Random seed. Defaults to None.
 
     Returns:
         dict: Dictionary with keys:
@@ -134,11 +125,6 @@ def GRASP(graph: Graph, num_regions: int,
         "Time: LS"
         "record_f"
     """
-
-    # set random seed
-    if seed is not None:
-        np.random.seed(seed)
-        random.seed(seed)
 
     # count execution time, and for diferent concepts
     start_time_general = time.time()
