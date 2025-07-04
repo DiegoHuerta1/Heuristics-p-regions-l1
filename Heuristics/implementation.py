@@ -57,7 +57,7 @@ def Multi_Start_LS(graph: Graph, num_regions: int,
         
         # get initial solution, count time
         start_time_P0 = time.time()
-        P_0 = greedy_algorithm(graph, num_regions)       
+        P_0 = greedy_algorithm(graph, num_regions, dist_matrix)       
         time_P0_it = time.time() - start_time_P0
         
         # get the remaining available time
